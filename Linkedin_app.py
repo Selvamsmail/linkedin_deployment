@@ -127,11 +127,10 @@ def top_4_prediction(input_data):
 
 def main():
     a = collect()
-    st.write('Welcome the Application, *Find Matching Founder Profiles* :sunglasses:')
+    st.write('Welcome to the Application, *Find Matching Founder Profiles* :sunglasses:')
 
-    st.title('Enter you profile Details')
-    st.title("User Data Collection Form")
-
+    st.title('Enter your profile Details')
+    
     main = {}
     # Basic Information
     name = st.text_input("Name")
