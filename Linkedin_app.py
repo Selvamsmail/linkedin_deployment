@@ -18,7 +18,7 @@ def collect():
 def getdata():
   gdown.download(id = '1AFL6D6TJgqpkjNAwtNrf0j0e3GadxWp_')
   gdown.download(id = '1vLnhZi7vk0Hal45b0cdJrIaPafBFbkN_')#knn model
-  with open('/content/knn_model_linkedin.pkl', 'rb') as file:
+  with open('/mount/src/linkedin_deployment/knn_model_linkedin.pkl', 'rb') as file:
     model = pickle.load(file)
   return model
 
@@ -97,7 +97,7 @@ def top_4_prediction(input_data):
     result_df = result_df.drop(columns=columns_to_vectorize_1)
     result_df = result_df.drop(columns=columns_to_vectorize_2)
     #------------------------------------------------------------------------------------------------------
-    colsdf = pd.read_csv('/content/x_train.csv')
+    colsdf = pd.read_csv('/mount/src/linkedin_deployment/x_train.csv')
     colsdf = pd.DataFrame(columns=colsdf.columns.to_list())
 
     for column in colsdf.columns:
@@ -105,7 +105,7 @@ def top_4_prediction(input_data):
             colsdf[column] = df[column]
     colsdf = colsdf.fillna(0)
     #------------------------------------------------------------------------------------------------------
-    orgdf = pd.read_csv('/content/retrivaldata.csv')
+    orgdf = pd.read_csv('/mount/src/linkedin_deployment/retrivaldata.csv')
 
     user_input = colsdf.iloc[0]  # Change the index (5) to any user index you want to test
     user_input = user_input.values.reshape(1, -1)  # Reshape to 2D array
