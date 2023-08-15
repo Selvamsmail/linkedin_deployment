@@ -102,7 +102,7 @@ def top_4_prediction(input_data):
 
     for column in colsdf.columns:
         if column in result_df.columns:
-            colsdf[column] = df[column]
+            colsdf[column] = result_df[column]
     colsdf = colsdf.fillna(0)
     #------------------------------------------------------------------------------------------------------
     orgdf = pd.read_csv('/mount/src/linkedin_deployment/retrivaldata.csv')
