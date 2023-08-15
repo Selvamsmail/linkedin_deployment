@@ -118,6 +118,7 @@ def top_4_prediction(input_data):
     
     top_4_profiles = top_4_profiles.dropna(axis=1, how='all')
     top_4_profiles = top_4_profiles.loc[:, (top_4_profiles != 0.0).any()]
+    top_4_profiles = top_4_profiles.reset_index(drop=True)
     
     cosine_similarity_scores = [1 - distance for distance in distances]
     st.write( f'KNN Distances from profiles', distances)
