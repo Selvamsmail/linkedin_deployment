@@ -183,9 +183,12 @@ def main():
         
     st.write(top_4_profiles)
 
-    if st.button("Download CSV"):
-      csv_string = top_4_profiles.to_csv(index=False)
-      st.download_csv(csv_string, "table_data.csv")
+    st.download_button(
+        label='Download CSV',
+        data = top_4_profiles.to_csv(index=False),
+        file_name='data.csv',
+        mime='text/csv'
+    )
       
 if __name__ == '__main__':
     main()
