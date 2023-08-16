@@ -178,11 +178,11 @@ def main():
     top_4_profiles = pd.DataFrame()
     
     # button
-if st.button("Download CSV"):
-    # Generate a CSV string from the DataFrame
-    csv_string = df.to_csv(index=False)
-    # Create a download link
-    st.download_csv(csv_string, "table_data.csv")
+    if st.button('Check'):
+        top_4_profiles = top_4_prediction(user_input)
+        
+    st.write(top_4_profiles)
+    
 
 if __name__ == '__main__':
     main()
