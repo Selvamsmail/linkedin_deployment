@@ -182,7 +182,10 @@ def main():
         top_4_profiles = top_4_prediction(user_input)
         
     st.write(top_4_profiles)
-    
 
+    if st.button("Download CSV"):
+      csv_string = df.to_csv(index=False)
+      st.download_csv(csv_string, "table_data.csv")
+      
 if __name__ == '__main__':
     main()
