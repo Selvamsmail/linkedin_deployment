@@ -184,7 +184,7 @@ def main():
     st.write(top_4_profiles)
 
     if st.button("Download CSV"):
-      csv_string = df.to_csv(index=False)
+      csv_string = top_4_profiles.to_csv(index=False)
       st.download_csv(csv_string, "table_data.csv")
       
 if __name__ == '__main__':
